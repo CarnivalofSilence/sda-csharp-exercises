@@ -5,12 +5,27 @@ namespace sda_csharp_exercises
 {
     class Program
     {
+        static void PrintHello(Person person) 
+        {
+            if (person.IsAdult())
+            {
+                Console.WriteLine("Welcome to liquore store!");
+            }
+            else 
+            {
+                Console.WriteLine("Welcome to toy store");
+            }
+        
+        }
+
+
         static void Main(string[] args)
         {
 
             Person person = new Person("Jan", "Kowalski", 1981);
             Employee employee = new Employee("Adam", "Nowak", 2000, 5000);
             Person person2 = new Employee("Ann", "Kowalska", 1982, 6000);
+            Person person3 = new Person("Kuba", "Nowak", 2015);
             // Employee employee2 = (Employee)person2;
             //Employee employee2 = person2 as Employee;
           
@@ -39,7 +54,10 @@ namespace sda_csharp_exercises
                 {
                     Console.WriteLine("No Idea !?");
                 }
-                
+
+                PrintHello(p);
+
+
             }
          
          
