@@ -23,19 +23,20 @@ namespace sda_csharp_exercises
             Salary = salary;
         }
 
-        public override string ToString()
-        {
-            return $"{{ firstName: \"{FirstName}\", lastName: \"{LastName}\", yearOfBirth: \"{YearOfBirth}\", Salary: \"{Salary}\" }}";    //{firstName: "Jan", lastName: "Kowalski"}
-            
-        }
-
         public override void WhoAmI()
         {
             base.WhoAmI();
             Console.WriteLine($"Salary = {Salary}");
         }
 
+        public override string ToString()
+        {
+            return $"{{ firstName: \"{FirstName}\", lastName: \"{LastName}\", yearOfBirth: {YearOfBirth}, salary: {GetSalary()} }}"; // { firstName: "Jan", lastName: "Kowalski" }
+        }
 
-
+        public virtual decimal GetSalary()
+        {
+            return Salary;
+        }
     }
 }
