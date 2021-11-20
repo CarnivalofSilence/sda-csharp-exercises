@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace sda_csharp_exercises
 {
@@ -6,7 +7,50 @@ namespace sda_csharp_exercises
     {
         static void Main(string[] args)
         {
-            
+            Cat cat = new Cat("Mruczek");
+            cat.MakeSound();
+            Dog dog = new Dog("Burek");
+            dog.MakeSound();
+
+            List<Animal> animals = new List<Animal>();
+            animals.Add(cat);
+            animals.Add(dog);
+
+
+            foreach (Animal a in animals)
+            {
+                a.MakeSound();
+                if (a is Cat)
+                {
+                    Console.WriteLine("It's a Cat");
+                }
+                else if (a is Dog)
+                {
+                    Console.WriteLine("It's a Dog");
+                }
+                else 
+                {
+                    Console.WriteLine("We don't know!");
+                }
+
+
+            }
+
+
+
+
         }
+
+
+
     }
+
+
+
+
+
+
+
+
+
 }
